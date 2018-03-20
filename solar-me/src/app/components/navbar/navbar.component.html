@@ -1,0 +1,15 @@
+<header>
+    <nav>
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a *ngIf="title" (click)="routing()" class="navbar-brand btn" >{{title}}</a>
+              <a *ngIf="!title" routerLink='/' class="navbar-brand btn" >Boards</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a routerLink='/settings' class="btn">Einstellungen</a></li>
+              
+              <li><a class="btn" (click)="logout()" >Abmelden</a></li>
+            </ul>
+          </div>
+    </nav>
+</header>

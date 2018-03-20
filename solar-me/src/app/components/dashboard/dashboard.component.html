@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="boards-wrapper">
+    <h2>Boards</h2>
+       <div id="boards">
+          <div class="board" *ngFor="let board of boards" >
+            <span class="title">{{board?.name}}</span>
+            <a style="color: white"   [routerLink]="['/board', board.id]">Neue Aufgabe anlegen</a>
+            <a style="color: white" href="{{board?.url}}">Zum Trello Board</a>
+          </div>
+          <a href="#" class="board add-board" (click)="addBoard()">
+            <span class="title">Neues Board erstellen...</span>
+          </a>
+        </div>
+</div>

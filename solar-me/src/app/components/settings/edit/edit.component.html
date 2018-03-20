@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="row">
+        <form novalidate (ngSubmit)="saveProfil(form.value)" #form="ngForm">
+        <div class="col-sm-12">
+            <h3>Kontoeinstellungen</h3>
+            <hr/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="gtoken">GitLab API Token:</label>
+                            <input type="text" class="form-control" id="gtoken" name="gitlabapitoken" [ngModel]="setting.gitlabapitoken" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="ttoken">Trello API Token:</label>
+                            <input type="text" class="form-control" id="ttoken" name="trellotoken" [ngModel]="setting.trellotoken" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="gurl">GitLab URL:</label>
+                            <input type="text" class="form-control" id="gurl" name="gitlaburl" [ngModel]="setting.gitlaburl" disabled>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="ktrello">Trello API Key:</label>
+                            <input type="text" class="form-control" id="ktrello" name="trellokey" [ngModel]="setting.trellokey" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="turl">Trello URL:</label>
+                            <input type="text" class="form-control" id="turl" name="trellourl" [ngModel]="setting.trellourl" disabled>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="text-right">
+                    <button (click)="cancel()" class=" btn btn-danger">Abbrechen</button>
+                    <button  class=" btn btn-success" [disabled]="!form.valid">Kontoeinstellungen speichern</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

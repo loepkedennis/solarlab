@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4"> 
+      <form novalidate (ngSubmit)="savePersonalProfil(form.value)" #form="ngForm">
+        <div class="form-group">
+          <label for="vorname">Vorname:</label>
+          <input type="text" class="form-control" id="vorname" name="vorname" [ngModel]="profil.vorname" required />
+        </div>
+        <div class="form-group">
+          <label for="nachname">Nachname:</label>
+          <input type="text" class="form-control" id="nachname" name="nachname" [ngModel]="profil.nachname" required>
+        </div>
+        <div class="form-group">
+          <label for="passwort">Passwort:</label>
+          <input type="password" class="form-control" id="passwort" name="passwort" [ngModel]="profil.passwort" required>
+        </div>
+        <div class="form-group">
+          <label for="passwortw">Passwort wiederholen:</label>
+          <input type="password" class="form-control" id="passwortw" name="passwortw" [ngModel]="profil.passwortw" required>
+        </div>
+        <div class="col-sm-12">
+          <div class="text-right">
+            <button (click)="cancel()" class=" btn btn-danger">Abbrechen</button>
+            <button type="submit" class=" btn btn-success" [disabled]="!form.valid">Profil speichern</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> 

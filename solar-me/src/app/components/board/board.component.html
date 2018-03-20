@@ -1,0 +1,24 @@
+<app-navbar title="Zurück"></app-navbar>
+<div class="boards-wrapper">
+  <div class="row">
+    <div class="container">
+      <div class="task-list">
+        <h2>Karten durchsuchen</h2>
+        <div class="input-group">
+          <input type="text" #query class="form-control" id="searchField" (keyup.enter)="findTasks(query.value)" [formControl]="searchTerm">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="button" (click)="findTasks(query.value)"><i class="glyphicon glyphicon-search"></i></button>
+            <button class="btn btn-success" routerLink='./new'><i class="glyphicon glyphicon-plus"></i> Neue Karte</button>
+          </div>
+        </div>
+        <br/>
+      </div>
+      <div>
+        <app-card-item *ngFor="let task of tasks" [task]="task" (taskDelete)="deleteTask(task)" (taskSelected)="selectTask($event)"
+          [selected]="task.id == selectedTaskId">
+        </app-card-item>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
